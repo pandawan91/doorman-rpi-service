@@ -31,14 +31,13 @@
             while (_continue)
             {
                 var cardId = _arduinoCommunicationService.ReadIncomingData();
-                Console.WriteLine(cardId);
+                
                 if(cardId >= 0)
                 {
                     var validationRequest = _webApiCommunicationService.ValidateCardId(cardId);
                     validationRequest.Wait();
                     if (validationRequest.IsCompleted)
                         _arduinoCommunicationService.SendWebApiResponse(validationRequest.Result);
-                    Console.WriteLine(validationRequest.Result);
                 }
             }
         }

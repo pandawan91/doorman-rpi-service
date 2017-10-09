@@ -20,8 +20,8 @@
             _serialPort = serialPort;
         }
 
-        //public SerialPortWrapper() : this(SerialPortFactory.Create("/dev/ttyACM0")) { }
-        public SerialPortWrapper() : this(SerialPortFactory.Create("COM3")) { }
+        public SerialPortWrapper() : this(SerialPortFactory.Create("/dev/ttyACM0")) { }
+        //public SerialPortWrapper() : this(SerialPortFactory.Create("COM3")) { }
 
         public string ReadSerialMessage()
         {
